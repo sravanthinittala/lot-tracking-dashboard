@@ -29,6 +29,7 @@ export function LotTable({ lots, onRefresh }: Props) {
     <table>
       <thead>
         <tr>
+          <th>ID</th>
           <th>Lot</th>
           <th>QC Status</th>
           <th>Quantity</th>
@@ -39,6 +40,7 @@ export function LotTable({ lots, onRefresh }: Props) {
       <tbody>
         {lots.map((lot) => (
           <tr key={lot.id}>
+            <td>{lot.id}</td>
             <td>{lot.lot_number}</td>
             <td>
               <select

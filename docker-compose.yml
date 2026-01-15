@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    container_name: lot-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/data       # persist SQLite DB
+      - ./api/app:/app     # optional: live reload
+    environment:
+      - DATABASE_URL=sqlite:///data/app.db
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: lot-frontend
+    ports:
+      - "5173:80"          # serve frontend
+    depends_on:
+      - backend

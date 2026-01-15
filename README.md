@@ -31,7 +31,6 @@ root/
 ├── frontend/               # React frontend (Vite)
 └── README.md
 ```
-<!--
 
 ## Setup with Docker
 
@@ -55,7 +54,7 @@ Fronted: [http://localhost:5173](http://localhost:5173)
 ```
 docker-compose down
 ```
--->
+
 ## Setup
 
 ### Backend
@@ -88,3 +87,24 @@ npm run dev
 ```
 
 The frontend will be available at [http://localhost:5173](http://localhost:5173)
+
+## API Endpoints 
+
+| Method | Endpoint | Description |
+|-------|------|------|
+| GET | `/lots/` | Fetches a list of lots |
+| GET | `/lots/{lot_id}` | Fetches a lot by lot_id (integer) |
+| POST | `/lots/` | Create a new lot |
+| PATCH | `/lots/{lot_id}` | Update lot by lot_id (updatable fields: quantity, qc_status) |
+| DELETE | `/lots/{lot_id}` | Delete lot with lot_id |
+| POST | `/lots/{lot_id}/ship` | Ship lot by lot_id |
+| GET | `/products/` | Fetches a list of products |
+| GET | `/products/{product_id}` | Fetches a product by lot_id (integer) |
+| POST | `/products/` | Create a new product |
+| PATCH | `/products/{product_id}` | Update product by lot_id (updatable fields: name, description, price) |
+| DELETE | `/products/{product_id}` | Delete product with lot_id |
+| GET | `/warehouses/` | Fetches a list of warehouses |
+| GET | `/warehouses/{warehouse_id}` | Fetches a warehouse by lot_id (integer) |
+| POST | `/warehouses/` | Create a new warehouse |
+| PATCH | `/warehouses/{warehouse_id}` | Update warehouse by lot_id (updatable fields: name, location, capacity) |
+| DELETE | `/warehouses/{warehouse_id}` | Delete warehouse with lot_id |
