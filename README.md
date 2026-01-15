@@ -20,15 +20,24 @@ Many manufacturers rely on databases to track shipment lots of different product
 ```
 root/
 ├── api/
-│   └── app/
-│       ├── core/           # Database connection, common utils
-│       ├── models/         # SQLAlchemy models
-│       ├── schemas/        # Pydantic schemas
-│       ├── services/       # Business logic
-│       ├── routes/         # API endpoints
-│       ├── main.py         # FastAPI app
+│   |── app/
+│   |    ├── core/           # Database connection, common utils
+│   |    ├── models/         # SQLAlchemy models
+│   |    ├── schemas/        # Pydantic schemas
+│   |    ├── services/       # Business logic
+│   |    ├── routes/         # API endpoints
+│   |    ├── main.py         # FastAPI app
+|   ├── Dockerfile           # Dockerfile for backen
+|   ├── requirements.txt
 ├── data/                   # SQLite database file
 ├── frontend/               # React frontend (Vite)
+|   ├── src/                # Frontend src code
+|   |   ├── api/            # API connection to backend
+|   |   ├── components/     # Components in frontend
+|   |   ├── types/          # Data types
+|   |   ├── main.tsx        # React app
+|   ├── Dockerfile          # Dockerfile for frontend
+├── docker-compose.yml
 └── README.md
 ```
 
@@ -47,6 +56,7 @@ docker-compose up
 ```
 
 Backend API: [http://localhost:8000/docs](http://localhost:8000/docs/) (Swagger UI)
+
 Fronted: [http://localhost:5173](http://localhost:5173)
 
 3. Stop the services
